@@ -1,0 +1,93 @@
+const hospitals = [
+    { name: "VisionCare Hospital", location: "Delhi", rating: 4.1 },
+    { name: "ClearSight Clinic", location: "Mumbai", rating: 3.5 },
+    { name: "OptiWell Eye Center", location: "Bangalore", rating: 4.2 },
+    { name: "EyePlus Medical", location: "Chennai", rating: 4.5 },
+    { name: "Drishti Eye Hospital", location: "Kolkata", rating: 4.7 },
+    { name: "Netradhama Eye Centre", location: "Bangalore", rating: 4.9 },
+    { name: "Aravind Eye Hospital", location: "Madurai", rating: 4.6 },
+    { name: "Sankara Nethralaya", location: "Chennai", rating: 4.7 },
+    { name: "Disha Hospitals", location: "Durgapur", rating: 4.2 },
+    { name: "L. V. Prasad Eye Institute", location: "Hyderabad, Telangana", rating: 4.8 },
+    { name: "Aravind Eye Hospital (Madurai & other branches)", location: "Madurai, Tamil Nadu", rating: 4.7 },
+    { name: "Dr. Agarwal’s Eye Hospital", location: "Chennai & Pan-India", rating: 4.6 },
+    { name: "Shankar Netralaya", location: "Chennai, Tamil Nadu", rating: 4.6 },
+    { name: "AIIMS – Dr. Rajendra Prasad Centre for Ophthalmic Sciences", location: "New Delhi", rating: 4.7 },
+    { name: "Narayana Nethralaya", location: "Bangalore, Karnataka", rating: 4.6 },
+    { name: "Vijaya Nethralaya Super Speciality Eye Hospital", location: "Bangalore, Karnataka", rating: 4.5 },
+    { name: "Centre for Sight", location: "New Delhi & other cities", rating: 4.5 },
+    { name: "Pushpagiri Eye Institute", location: "Secunderabad, Telangana", rating: 4.4 },
+    { name: "Akhand Jyoti Eye Hospital", location: "Saran / Patna (Bihar)", rating: 4.5 },
+    { name: "Dr. Rednam Surya Prasadrao Government Regional Eye Hospital", location: "Visakhapatnam, Andhra Pradesh", rating: 4.4 },
+    { name: "Regional Institute of Ophthalmology", location: "Thiruvananthapuram, Kerala", rating: 4.3 },
+    { name: "Chaithanya Eye Hospital & Research Institute", location: "Trivandrum, Kerala", rating: 4.2 },
+    { name: "Neera Eye Centre", location: "New Delhi", rating: 4.1 },
+    { name: "Iris Eye Centre", location: "Mumbai, Maharashtra", rating: 4.2 },
+    { name: "Maxivision Super Speciality Eye Hospital", location: "Various Cities", rating: 4.3 },
+    { name: "Mahavir Netralaya", location: "Darbhanga, Bihar", rating: 4.1 },
+    { name: "See Eye Clinic", location: "Pune, Maharashtra", rating: 4.2 },
+    { name: "Focus Eye Hospital", location: "Ernakulam, Kerala", rating: 4.1 },
+    { name: "Orthovision Clinic", location: "Noida, Uttar Pradesh", rating: 4.0 },
+    { name: "Devini Eye Care Centre", location: "Solapur, Maharashtra", rating: 4.0 }
+];
+    
+
+const services = [
+    { service: "Eye Check-up", price: "₹500 – ₹700" },
+    { service: "LASIK Surgery", price: "₹45,000 – ₹60,000" },
+    { service: "Cataract Surgery", price: "₹25,000 – ₹40,000" }
+];
+
+const hospitalGrid = document.getElementById("hospitalGrid");
+const priceCards = document.getElementById("priceCards");
+const modal = document.getElementById("appointmentModal");
+
+function loadHospitals(list = hospitals) {
+    hospitalGrid.innerHTML = "";
+    list.forEach(h => {
+        hospitalGrid.innerHTML += `
+            <div class="hospital-card">
+                <h3>${h.name}</h3>
+                <p>${h.location}</p>
+                <p>⭐ ${h.rating}</p>
+                <button onclick="openModal()">Book Appointment</button>
+            </div>
+        `;
+    });
+}
+
+function loadPrices() {
+    services.forEach(s => {
+        priceCards.innerHTML += `
+            <div class="price-card">
+                <h4>${s.service}</h4>
+                <p>${s.price}</p>
+            </div>
+        `;
+    });
+}
+
+document.getElementById("searchInput").addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+    loadHospitals(hospitals.filter(h => h.name.toLowerCase().includes(value)));
+});
+
+function openModal() {
+    modal.style.display = "block";
+}
+
+function closeModal() {
+    modal.style.display = "none";
+}
+
+function submitAppointment() {
+    document.getElementById("confirmMsg").textContent =
+        "Appointment request submitted successfully ✔";
+}
+
+function scrollToHospitals() {
+    document.getElementById("hospitals").scrollIntoView({ behavior: "smooth" });
+}
+
+loadHospitals();
+loadPrices();

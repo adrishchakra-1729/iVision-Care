@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iVision | Smart Eye Health Platform</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>iVision-Care<h1>
+        <p>Book appointments • Compare prices • Find trusted eye hospitals</p>
+        <button onclick="scrollToHospitals()">Explore Hospitals</button>
+    </div>
+</section>
+
+<!-- SEARCH -->
+<section class="search-section">
+    <input type="text" id="searchInput" placeholder="Search hospitals...">
+</section>
+
+<!-- HOSPITAL CARDS -->
+<section class="hospital-section" id="hospitals">
+    <h2>Eye Care Hospitals</h2>
+    <div class="hospital-grid" id="hospitalGrid"></div>
+</section>
+
+<!-- PRICE COMPARISON -->
+<section class="price-section">
+    <h2>Service Price Comparison</h2>
+    <div class="price-cards" id="priceCards"></div>
+</section>
+
+<!-- APPOINTMENT MODAL -->
+<div class="modal" id="appointmentModal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3>Book Appointment</h3>
+        <input type="text" id="userName" placeholder="Full Name">
+        <input type="email" id="userEmail" placeholder="Email">
+        <input type="date" id="userDate">
+        <button onclick="submitAppointment()">Confirm</button>
+        <p id="confirmMsg"></p>
+    </div>
+</div>
+
+<script src="app.js"></script>
+
+<!-- APPOINTMENT MODAL -->
+<div class="modal" id="appointmentModal">
+    <div class="modal-box">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+
+        <h2>Book Eye Appointment</h2>
+
+        <form id="appointmentForm">
+            <input type="text" id="patientName" placeholder="Full Name" required>
+            <input type="number" id="patientAge" placeholder="Age" required>
+            <input type="tel" id="patientPhone" placeholder="Phone Number" required>
+
+            <input type="text" id="hospitalName" placeholder="Hospital" readonly>
+
+            <select id="eyeProblem" required>
+                <option value="">Select Eye Problem</option>
+                <option>Eye Check-up</option>
+                <option>Blurred Vision</option>
+                <option>Cataract</option>
+                <option>LASIK Consultation</option>
+                <option>Redness / Infection</option>
+            </select>
+
+            <input type="date" id="appointmentDate" required>
+            <input type="time" id="appointmentTime" required>
+
+            <textarea id="notes" placeholder="Additional Notes (optional)"></textarea>
+
+            <button type="submit">Confirm Appointment</button>
+        </form>
+
+        <p id="successMsg"></p>
+    </div>
+</div>
+
+</body>
+</html>
