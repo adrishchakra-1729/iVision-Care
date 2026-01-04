@@ -1,0 +1,136 @@
+.page-header {
+  padding: 60px 10%;
+  text-align: center;
+  background: #f5f9ff;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+#hospitalname {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #111827;
+}
+
+
+
+.hospital-filter {
+  display: flex;
+  gap: 20px;
+  padding: 30px 10%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.appointment-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.appointment-box {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 420px;
+  position: relative;
+}
+
+.appointment-box input,
+.appointment-box select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.appointment-box button {
+  width: 100%;
+  padding: 12px;
+  background: #0a6cf1;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.success-msg {
+  display: none;
+  margin-top: 15px;
+  color: green;
+  text-align: center;
+}
+
+
+.hospital-filter input,
+.hospital-filter select {
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.hospital-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px 10% 60px;
+}
+
+.hospital-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.hospital-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+.hospital-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 8px;
+}
+.hospital-card p {
+  font-size: 0.95rem;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+
+
+
+.hospital-card button {
+ margin-top: 15px;
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.hospital-card button:hover {
+  background: linear-gradient(135deg, #1e40af, #1e3a8a);
+  transform: scale(1.05);
+}
+
+
+
+ 
+
