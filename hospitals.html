@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Hospitals | i-Vision</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <section class="page-header">
+    <h1>Eye Hospitals & Clinics</h1>
+    <p>Find trusted eye care hospitals near you</p>
+  </section>
+
+  <!-- Search & Filter -->
+  <section class="hospital-filter">
+    <input type="text" id="searchInput" placeholder="Search hospital name..." />
+    <select id="cityFilter">
+      <option value="all">All Cities</option>
+      <option value="delhi">Delhi</option>
+      <option value="mumbai">Mumbai</option>
+      <option value="kolkata">Kolkata</option>
+      <option value="chennai">Chennai</option>
+    </select>
+  </section>
+
+  <!-- Hospital Cards -->
+  <section class="hospital-list" id="hospitalList">
+
+    <div class="hospital-card" data-city="delhi">
+      <h3>Vision Care Hospital</h3>
+      <p>📍 Delhi</p>
+      <p>Specialty: Cataract, LASIK</p>
+      <button>Book Appointment</button>
+    </div>
+
+    <div class="hospital-card" data-city="mumbai">
+      <h3>EyePlus Clinic</h3>
+      <p>📍 Mumbai</p>
+      <p>Specialty: Eye Checkup</p>
+      <button>Book Appointment</button>
+    </div>
+
+    <div class="hospital-card" data-city="kolkata">
+      <h3>ClearSight Eye Center</h3>
+      <p>📍 Kolkata</p>
+      <p>Specialty: Retina Care</p>
+      <button>Book Appointment</button>
+    </div>
+    
+    <div class="hospital-card" data-city="chennai">
+      <h3>Disha Eye Hospitals</h3>
+      <p>📍 Durgapur</p>
+      <p>Specialty: Cataract Surgery</p>
+      <button>Book Appointment</button>
+    </div>
+    
+    <div class="hospital-card" data-city="chennai">
+      <h3>Vijaya Netralaya</h3>
+      <p>📍 Chennai</p>
+      <p>Specialty: Eye Checkup and Contact Lens Recommendation</p>
+      <button>Book Appointment</button>
+    </div>
+
+  </section>
+
+  <script src="js/main.js"></script>
+  
+  <div class="appointment-modal" id="appointmentModal">
+  <div class="appointment-box">
+    <span class="close-btn" onclick="closeAppointment()">×</span>
+
+    <h3>Book Appointment</h3>
+
+    <form id="appointmentForm">
+      <input type="text" id="hospitalName" readonly>
+
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <input type="tel" placeholder="Phone Number" required>
+
+      <input type="date" required>
+      <select required>
+        <option value="">Select Time Slot</option>
+        <option>10:00 AM – 11:00 AM</option>
+        <option>11:00 AM – 12:00 PM</option>
+        <option>2:00 PM – 4:00 PM</option>
+      </select>
+
+      <button type="submit">Confirm Appointment</button>
+    </form>
+
+    <p class="success-msg" id="appointmentSuccess">
+      ✅ Appointment request submitted successfully!
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
